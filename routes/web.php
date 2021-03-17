@@ -14,9 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
 
+Route::resource('choses', 'App\Http\Controllers\ChosesController');
+
+Route::resource('categories', 'App\Http\Controllers\CategoriesController');
+
+Route::resource('tags', 'App\Http\Controllers\TagsController');
+
+Route::resource('lieux', 'App\Http\Controllers\LieuxController', [
+    'parameters' => [
+        'lieux' => 'lieu'
+    ]
+]);
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <p>{{ __('Vous êtes connecté !') }}</p>
+                    <p>{{ __('Bienvenue sur votre espace personnel, il n\'y a que vous qui pouvez voir vos objets !') }}</p>
                 </div>
             </div>
         </div>
